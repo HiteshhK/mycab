@@ -1,0 +1,82 @@
+<ng-container>
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav [opened]="showSideNav" mode="side" class="example-sidenav"
+      >
+      <div class="cab-filters">
+
+          <button mat-icon-button [matMenuTriggerFor]="filterMenu" class="filter-btn">
+              <mat-icon>star</mat-icon> Rating <mat-icon>arrow_drop_down</mat-icon></button>
+              <mat-menu #filterMenu="matMenu">
+                  <button mat-menu-item class="rating-filter" >* * * * *</button>
+                  <button mat-menu-item class="rating-filter">* * * * </button>
+                  <button mat-menu-item class="rating-filter">* * * </button>
+                  <button mat-menu-item class="rating-filter">* * </button>
+                  <button mat-menu-item class="rating-filter">*</button>
+                </mat-menu>
+                <button mat-icon-button [matMenuTriggerFor]="filterMenuCabType" class="filter-btn">
+                    <mat-icon>directions_car</mat-icon> Cab Type <mat-icon>arrow_drop_down</mat-icon></button>
+                    <mat-menu #filterMenuCabType="matMenu">
+                        <button mat-menu-item>8 seater</button>
+                        <button mat-menu-item>7 seater</button>
+                        <button mat-menu-item>6 seater</button>
+                        <button mat-menu-item>5 seater</button>
+                        <button mat-menu-item>4 seater</button>
+                      </mat-menu>
+            </div>
+
+      <mat-card>
+        <div class="mat-card-right">
+            <mat-icon matPrefix>menu</mat-icon>
+            <b>Hire cab</b>
+        </div>
+            <div class="mat-card-left">
+                <mat-icon >search</mat-icon>
+                <div>
+                  <mat-icon (click)="showSideNav=false">close</mat-icon>
+                </div>
+            </div>
+            
+    </mat-card>
+    <button mat-button [matMenuTriggerFor]="sortMenu">
+        Sort <mat-icon>arrow_drop_down</mat-icon></button>
+<mat-menu #sortMenu="matMenu">
+  <button mat-menu-item>Charges</button>
+  <button mat-menu-item>Rating</button>
+</mat-menu>
+
+      <app-available-cabs
+      (onCabClick)="openDialog(sidenav)">
+  
+      </app-available-cabs>
+          
+    </mat-sidenav>
+    
+    <mat-sidenav-content >
+        
+      <button mat-icon-button *ngIf="!showSideNav" (click)="showSideNav=true" class="hire-cab-btn">
+        <mat-icon aria-label="Example icon-button with a heart icon">directions_car</mat-icon>
+      Hire cab</button>
+        <google-map
+        id="map"
+        *ngIf="coords.lat"
+        width="100%"
+        height="100%"
+        [zoom]="15"
+        [center]="coords"
+        [options]="mapConfig"
+        >
+        <map-directions-renderer *ngIf="directionsResults"
+        [directions]="directionsResults"></map-directions-renderer>
+        <map-marker
+        [position]="markerPosition"
+        [options]="markerOptions"></map-marker>
+        <map-marker *ngFor="let data of mockCabData"
+        [position]="data.coords"
+        [options]="data.options"
+        >
+
+        </map-marker>
+        </google-map>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-container>

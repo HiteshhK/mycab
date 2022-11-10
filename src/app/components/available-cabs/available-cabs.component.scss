@@ -1,0 +1,31 @@
+.available-cabs{
+    border-bottom:1px solid #606060;
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    padding:8px 16px;
+  .cab-info{
+      display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-bottom:8px;
+      img{
+          height: 52px;
+          width: 52px;
+          border-radius: 4px;
+      }
+      .vehicle-detail{
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          .vehicle-number{
+              font-size: 12px;
+              border:1px solid #606060;
+              color:rgba(0,0,0,.26);
+              border-radius: 2px;
+          }
+      }
+  }
+  .restricted-area label{
+      color:#ff0000;
+  }
+}

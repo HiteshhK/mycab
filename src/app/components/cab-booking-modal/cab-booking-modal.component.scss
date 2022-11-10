@@ -1,0 +1,23 @@
+.search-location {
+    margin: 10px 0;
+    .search-label{
+        font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+color: #3D4043;
+    }
+}
+.mat-dialog-title{
+
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.book-now{
+    width: 100%;
+    background: #1281dd;
+    color: #fff;
+}

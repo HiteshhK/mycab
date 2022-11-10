@@ -1,0 +1,21 @@
+<div class="available-cabs" (click)="showDriverDetail()">
+    <div class="cab-info">
+        <img src="./assets/images/cabs/{{details.profilePhoto}}" alt="driver-image">
+      <div class="info">
+        <div class="vehicle-detail">
+          <span>{{details.driverName}}</span>
+          <span class="vehicle-number">{{details.vehicleNo}}</span>
+        </div>
+        <div class="ratings-review">
+<app-ratings [rating]="details.rating"></app-ratings>
+
+        </div>
+      </div>
+    </div>
+    <div class="restricted-area">
+      <label>Restricted area-</label>
+    <span *ngFor="let area of details.restrictedArea; let last = last">
+        {{area}}
+        <span *ngIf="!last">,</span>
+    </span></div>
+  </div>

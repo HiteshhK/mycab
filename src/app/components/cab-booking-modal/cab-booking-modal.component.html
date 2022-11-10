@@ -1,0 +1,29 @@
+<div mat-dialog-title>
+  <span>Book a cab</span>
+  <mat-icon  mat-dialog-close>close</mat-icon>
+</div>
+<mat-dialog-content class="mat-typography">
+  <app-available-cabs></app-available-cabs>
+  <app-contacts></app-contacts>
+  <div class="search-location">
+    <app-search-location (onLocationChange)="getLocation($event,'start')">
+      <span class="search-label">
+        Pickup location
+      </span>
+    </app-search-location>
+  </div>
+
+  <div class="search-location">
+    <app-search-location (onLocationChange)="getLocation($event,'end')">
+      <span class="search-label">
+        Drop location
+      </span>
+    </app-search-location>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  
+
+  <button mat-button class="book-now" (click)="getDirection()" cdkFocusInitial>Book now</button>
+</mat-dialog-actions>

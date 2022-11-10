@@ -1,0 +1,82 @@
+.example-container {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    background: #ffffff;
+  }
+
+  .hire-cab-btn{
+    position: absolute;
+    right: 50%;
+    z-index: 1;
+    top: 10px;
+    width: 100px;
+    padding: 0px;
+    background: #fff;
+    border: 1px solid gray;
+    border-radius: 16px;
+    opacity: 0.9;
+  }
+  mat-card{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    height: 36px;
+    border:1px solid #efefef;
+    margin: 10px;
+    .mat-card-right{
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mat-card-left{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      div{
+        border-left:1px solid gray;
+        padding:0 5px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+  }
+
+  .cab-filters {
+    position: fixed;
+    top:10px;
+    left: 400px;
+    width: 210px;
+    justify-content: space-between;
+    display: flex;
+    .filter-btn{
+      width: 100px;
+      padding: 0px 0px 6px 0px;
+      height:40px;
+      font-size: 12px;
+      
+      background: #fff;
+      border: 1px solid gray;
+      border-radius: 16px;
+
+     mat-icon{
+        font-size:16px;
+        color:#1281dd;
+    }
+    }
+}
+
+.rating-filter{
+  color: #e1e163;
+    font-size: 20px;
+}

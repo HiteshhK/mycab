@@ -1,0 +1,35 @@
+<google-map
+        id="map"
+        width="100%"
+        height="100%"
+        [zoom]="15"
+        [center]="markerPosition"
+        [options]="mapConfig"
+        >
+        <map-directions-renderer *ngIf="directionsResults"
+        [directions]="directionsResults"></map-directions-renderer>
+        <map-marker
+        [position]="markerPosition"
+        [options]="markerOptions"></map-marker>
+        </google-map><p>driver-container works!</p>
+
+<ng-template #myDialog>
+        <h1 mat-dialog-title>You got a new ride!</h1>
+<div mat-dialog-content>
+        <div class="user-detail">
+                <img src="./assets/images/cabs/man-svgrepo-com.svg" alt="">
+                <span>username</span>
+                <app-ratings [rating]="ratings"></app-ratings>
+        </div>
+        <app-contacts></app-contacts>
+        <div class="user-detail">
+                <span><mat-icon>location_on</mat-icon> Intellion edge</span>
+                <p><sub>2.7km from your location</sub></p>
+                <app-timer></app-timer>
+        </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" [mat-dialog-close]="true">Confirm</button>
+  <button mat-stroked-button  [mat-dialog-close]="true" cdkFocusInitial>Cancel</button>
+</div>
+</ng-template>
